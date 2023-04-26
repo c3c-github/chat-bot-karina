@@ -1,0 +1,194 @@
+.image-button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+body {
+    background-color: #160F29;
+    border-top: 5px solid #3938F1;
+    border-bottom: 5px solid #3938F1;
+    text-align: center;
+    margin: 0;
+    height: 99vh;
+    display: grid;
+    grid-auto-rows: minmax(auto, auto);
+    justify-content: center;
+}
+
+.logo-menu
+{
+    height: 110px;
+    margin-top: 71px;
+}
+
+.line-menu
+{
+    height: 12px;
+    margin-top:20px;
+}
+
+.menu-title
+{
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+}
+
+p
+{
+    margin-bottom: 0;
+    margin-top: 40px;
+}
+
+.menu-button
+{
+    background-color: #3938F1; 
+    height: 60px;
+    width: 288px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.button {
+       
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    
+    margin: 4px 2px;
+    cursor: pointer;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 165%;
+}
+
+input[type=text],input[type=email],input[type=phone], select {
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 165%;
+    color: #FFFFFF;
+    padding: 9px;
+    background-color: #160F29;
+    margin-bottom: 24px;
+}
+
+input::placeholder {
+    color: #FFFFFF;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 165%;
+    color: #FFFFFF;
+    padding: 9px;
+    background-color: #160F29;
+    margin-bottom: 24px;
+}
+
+textarea::placeholder {
+    color: #FFFFFF;
+}
+
+button [type="submit"]
+{
+    color: red;
+}
+
+input[type=submit] {
+    width: 300px;
+    height: 44px;
+    box-sizing: border-box;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 165%;
+    color: #FFFFFF;
+    padding: 5px;
+    background-color: #160F29;
+    margin-bottom: 24px;
+    background: #3938F1;
+    cursor: pointer;
+}
+
+.thanks-square
+{
+    box-sizing: border-box;   
+    width: 288px;
+    height: 205px;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+}
+
+.thanks-h1
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.thanks-h2
+{  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFE;
+}
+
+.home-link
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 165%;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #FFFFFF;    
+}
+
+footer
+{
+    height: 52px;
+    left: 0px;
+    background: #3938F1;
+}
+
+.logo-websummit
+{
+    height: 16.82px;
+    padding: 17px;   
+}
