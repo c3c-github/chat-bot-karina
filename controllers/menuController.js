@@ -1,3 +1,5 @@
+const jsforce = require('jsforce');
+
 const menu = (req, res) => {
     res.render("menu", {} );
 }
@@ -18,7 +20,58 @@ const formApp = (req, res) => {
 }
 
 const thanks = (req, res) => {
-    res.render("thanks", {form : {'name': req.body.formType}} );
+        // replace with your Salesforce Connected App credentials
+        const clientId = '3MVG9cHH2bfKACZa7IhT4bhgY3L.B7OfXN5.2Q8eEu_jK7ebe1SeIwayHY1AdDQt0rK7VYwgVMivS2ge1W86T';
+        const clientSecret = '325E76F1AE9726A62C8FAA69A0F7281078E5DDC5EA437053331913175F15EFF7';
+        const username = 'mauro.araripe@c3csoftware.com.br';
+        const password = 'c3c*2023';
+        const securityToken = 'czFFo1un2JJxVP88If9Zqh16';
+    
+        const conn = new jsforce.Connection({
+            oauth2: {
+                clientId: clientId,
+                clientSecret: clientSecret,
+                redirectUri: 'http://localhost:3000/oauth2/callback' // replace with your callback URL
+            }
+        });
+
+        conn.login(username, password + securityToken, function(err, userInfo) {
+            if (err) { return console.error(err); }
+            console.log('Logged in to Salesforce');
+            console.log('Access Token: ' + conn.accessToken);
+            console.log('Instance URL: ' + conn.instanceUrl);
+
+            const lead = {
+                RecordTypeId : '012HY0000004LXiYAM',
+                LastName : req.body.name,
+                Email : req.body.email,
+                MobilePhone : req.body.phone,
+                Company : req.body.company,
+                ProdutosDeinteresse__c : req.body.formType,
+                Description : req.body.message
+            };  
+    
+            conn.sobject('Lead').create(lead, function(err, result) {
+            if (err) {return console.error(err); }
+                console.log('Lead inserted with Id: ' + result.id);                
+            });
+            
+            res.render("thanks", {form : {'name': req.body.formType}} );
+
+        });
+
+        conn.version = '54.0';
+
+        /*
+            name="product"        
+            name="cripto"
+            name="type"
+            
+                IndicacaoNome__c : req.body.ownerName
+        */
+
+
+        
 }
 
 module.exports =  {
