@@ -6,7 +6,8 @@
     </head>    
 
 <body>
-        <div>
+    <div class="content">
+        <div class="home-button">
             <a href="/" class="image-button">
                 <img src="/public/home.svg" alt="">
             </a>
@@ -16,46 +17,64 @@
         </div> 
    
 
-    <form id="transferoForm" action="/submit-form" method="POST">        
-        <% if (form.name == 'PRIME') { %>
-            <select id="type" name="type" form="transferoForm">
-                <option value="Advisor">Advisor</option>
-            </select>
-            <br>
-        <% } %>
-        <% if (form.name != 'PRIME' && form.name != 'APP') { %>                    
-            <input type="text" id="ownerName" name="ownerName" placeholder="Seu nome (colaborador Transfero)" required ><br>
-        <% } %>
-            <input type="text" id="name" name="name" placeholder="Nome" required ><br>
-            <input type="email" id="email" name="email" placeholder="E-mail" required><br>
-            <input type="phone" id="phone" name="phone" placeholder="Telefone" required><br>
-        <% if (form.name != 'PRIME' && form.name != 'APP') { %>
-            <input type="text" id="company" name="company" placeholder="Qual sua empresa e segmento?" required ><br>
-        <% } %>
-        <!--
-        <% if (form.name == 'PAYMENTS') { %>
-                <p>Qual é o produto de interesse?</p>
-                <input type="radio" id="onRamp" name="product" value="On Ramp">
-                <label for="onRamp">On Ramp</label><br>
-                <input type="radio" id="offRamp" name="product" value="Off Ramp">
-                <label for="offRamp">Off Ramp</label><br>
-                <input type="radio" id="internationalSettlements" name="product" value="International Settlements">
-                <label for="internationalSettlements">International Settlements</label><br>
-        <% } %>
-        <% if (form.name == 'PRIME') { %>
-                <p>Já investe em cripto?</p>
-                <input type="radio" id="yes" name="cripto" value="Sim">
-                <label for="onRamp">Sim</label><br>
-                <input type="radio" id="no" name="cripto" value="Não">
-                <label for="offRamp">Não</label><br>            
-        <% } %>  
-        -->      
-            <textarea id="message" name="message" placeholder="Observações gerais" required></textarea><br>
-            <input type="submit" value="Enviar"><br>        
-        <div style="display: none;">
-            <input type="text" id="formType" name="formType" value=<%= form.name %>>
-        <div>
-        
-    </form>
+        <form id="transferoForm" action="/submit-form" method="POST">        
+            <% if (form.name == 'PRIME') { %>
+                <select id="type" name="type" form="transferoForm">
+                    <option value="Advisor">Advisor</option>
+                </select>
+                <br>
+            <% } %>
+            <% if (form.name != 'PRIME' && form.name != 'APP') { %>                    
+                <input type="text" id="ownerName" name="ownerName" placeholder="Seu nome (colaborador Transfero)" required ><br>
+            <% } %>
+                <input type="text" id="name" name="name" placeholder="Nome" required ><br>
+                <input type="email" id="email" name="email" placeholder="E-mail" required><br>
+                <input type="phone" id="phone" name="phone" placeholder="Telefone" required><br>
+            <% if (form.name != 'PRIME' && form.name != 'APP') { %>
+                <input type="text" id="company" name="company" placeholder="Qual sua empresa e segmento?" required ><br>
+            <% } %>
+            
+            <% if (form.name == 'PAYMENTS') { %>
+                <div class="checkboxes-section">
+                    <p>Qual é o produto de interesse?</p>
+                    <div class="checkboxes-container">
+                        <label for="onRamp" class="checkbox">On Ramp
+                            <input type="checkbox" id="onRamp" name="product" value="On Ramp">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="offRamp" class="checkbox">Off Ramp
+                            <input type="checkbox" id="offRamp" name="product" value="Off Ramp">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="internationalSettlements" class="checkbox">International Settlements
+                            <input type="checkbox" id="internationalSettlements" name="product" value="International Settlements">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            <% } %>
+            <% if (form.name == 'PRIME') { %>
+                <div class="checkboxes-section">
+                    <p>Já investe em cripto?</p>
+                    <div class="checkboxes-container">
+                        <label for="yes" class="checkbox">Sim
+                            <input type="radio" id="yes" name="cripto" value="Sim">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="no" class="checkbox">Não
+                            <input type="radio" id="no" name="cripto" value="Não">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>           
+            <% } %>      
+                <textarea id="message" name="message" placeholder="Observações gerais" required></textarea><br>
+                <input type="submit" value="Enviar"><br>        
+            <div style="display: none;">
+                <input type="text" id="formType" name="formType" value=<%= form.name %>>
+            <div>
+            
+        </form>
+    </div>
 </body>
 </html>
