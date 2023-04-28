@@ -40,6 +40,24 @@ const thanks = (req, res) => {
             console.log('Logged in to Salesforce');
             console.log('Access Token: ' + conn.accessToken);
             console.log('Instance URL: ' + conn.instanceUrl);
+            console.log('body: ',req.body);
+            console.log('body.product: ',req.body.product);
+            console.log('body.product.typeof: ', typeof (req.body.product) )
+
+            var product = '';
+
+            if(req.body.product != undefined){
+                if(typeof req.body.product == 'string'){
+                    product = req.body.product;
+                }
+                else{
+                    for(var i =0 ; i < req.body.product.length; i++){
+                        product = product + req.body.product[i] + ';'
+                    }
+                }
+                console.log('product: ',product);
+            }
+            
 
             const lead = {
                 RecordTypeId : '012HY0000004LXiYAM',
@@ -47,8 +65,12 @@ const thanks = (req, res) => {
                 Email : req.body.email,
                 MobilePhone : req.body.phone,
                 Company : req.body.company,
-                ProdutosDeinteresse__c : req.body.formType,
-                Description : req.body.message
+                ProdutosDeinteresse__c : product,
+                Description : req.body.message,
+                JaInvesteCripto__c : req.body.cripto,
+                ColaboradorTransfero__c : req.body.ownerName,
+                OrigemWebSummit__c : req.body.formType,
+                Advisor__c : req.body.advisor
             };  
     
             conn.sobject('Lead').create(lead, function(err, result) {
@@ -63,11 +85,7 @@ const thanks = (req, res) => {
         conn.version = '54.0';
 
         /*
-            name="product"        
-            name="cripto"
-            name="type"
-            
-                IndicacaoNome__c : req.body.ownerName
+            IndicacaoNome__c : req.body.ownerName
         */
 
 
