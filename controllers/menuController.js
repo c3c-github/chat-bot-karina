@@ -57,10 +57,33 @@ const thanks = (req, res) => {
                 }
                 console.log('product: ',product);
             }
+
+            var recordTypeId = '';
+
+            switch (req.body.formType) {
+                case 'PAYMENTS':
+                    recordTypeId = '012HY0000004La3YAE';
+                    break
+                case 'VENTURES':
+                    recordTypeId = '012HY0000004La8YAE';
+                    break
+                case 'PRIME':
+                    recordTypeId = '012HY0000004LaDYAU';
+                    break
+                case 'CHECKOUT':
+                    recordTypeId = '012HY0000004LaIYAU';
+                    break
+                case 'APP':
+                    recordTypeId = '012HY0000004LaNYAU';
+                    break
+                default:
+                    recordTypeId = '012HY0000004LXiYAM';
+                    break
+              }
             
 
             const lead = {
-                RecordTypeId : '012HY0000004LXiYAM',
+                RecordTypeId : recordTypeId,
                 LastName : req.body.name,
                 Email : req.body.email,
                 MobilePhone : req.body.phone,
