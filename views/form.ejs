@@ -29,13 +29,13 @@
                 <br>
             <% } %>
             <% if (form.name != 'PRIME' && form.name != 'APP') { %>                    
-                <input type="text" id="ownerName" name="ownerName" placeholder="Seu nome (colaborador Transfero)" required ><br>
+                <input type="text" id="ownerName" name="ownerName" placeholder="Seu nome (colaborador Transfero)" ><br>
             <% } %>
                 <input type="text" id="name" name="name" placeholder="Nome" required ><br>
-                <input type="email" id="email" name="email" placeholder="E-mail" required><br>
-                <input type="phone" id="phone" name="phone" placeholder="Telefone" required><br>
+                <input type="email" id="email" name="email" placeholder="E-mail"><br>
+                <input type="phone" id="phone" name="phone" placeholder="Telefone" ><br>
             <% if (form.name != 'PRIME' && form.name != 'APP') { %>
-                <input type="text" id="company" name="company" placeholder="Qual sua empresa e segmento?" required ><br>
+                <input type="text" id="company" name="company" placeholder="Qual sua empresa e segmento?"  ><br>
             <% } %>
             
             <% if (form.name == 'PAYMENTS') { %>
@@ -72,7 +72,7 @@
                     </div>
                 </div>           
             <% } %>      
-                <textarea id="message" name="message" placeholder="Observações gerais" required></textarea><br>
+                <textarea id="message" name="message" placeholder="Observações gerais" ></textarea><br>
                 <input type="submit" value="Enviar"><br>        
             <div style="display: none;">
                 <input type="text" id="formType" name="formType" value=<%= form.name %>>
