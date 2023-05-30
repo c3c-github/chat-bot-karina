@@ -95,7 +95,7 @@ const thanks = (req, res) => {
                 ColaboradorTransfero__c : req.body.ownerName,
                 OrigemWebSummit__c : req.body.formType,
                 Advisor__c : req.body.advisor,
-                NomeEvento__c : req.body.eventName
+                IndicacaoNome__c : req.body.eventName
             };  
     
             conn.sobject('Lead').create(lead, function(err, result) {
