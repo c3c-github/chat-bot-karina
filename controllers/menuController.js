@@ -4,7 +4,8 @@ const menu = (req, res) => {
     res.render("menu", {} );
 }
 const formPay = (req, res) => {
-    res.render("form", {form : {'name': 'PAYMENTS'}} );
+    const eventName = req.query.eventname;
+    res.render("form", {form : {'name': 'PAYMENTS', 'eventName': eventName}} );
 }
 const formVentures = (req, res) => {
     res.render("form", {form : {'name': 'VENTURES'}} );
@@ -93,7 +94,8 @@ const thanks = (req, res) => {
                 JaInvesteCripto__c : req.body.cripto,
                 ColaboradorTransfero__c : req.body.ownerName,
                 OrigemWebSummit__c : req.body.formType,
-                Advisor__c : req.body.advisor
+                Advisor__c : req.body.advisor,
+                NomeEvento__c : req.body.eventName
             };  
     
             conn.sobject('Lead').create(lead, function(err, result) {
