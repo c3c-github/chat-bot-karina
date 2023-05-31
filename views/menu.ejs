@@ -15,24 +15,21 @@
                 <img src="/public/line.svg" />
             </div>
             <p class="menu-title">Escolha o produto que deseja</p>
-            <a href="/formPay" class="button">
+            <a href="/formPay?eventName=<%= menu.eventName %>" class="button">
                 <div class="menu-button">Pay</div>
             </a>
-            <a href="/formVentures" class="button">
+            <a href="/formVentures?eventName=<%= menu.eventName %>" class="button">
                 <div class="menu-button">Ventures</div>
             </a>
-            <a href="/formPrime" class="button">
+            <a href="/formPrime?eventName=<%= menu.eventName %>" class="button">
                 <div class="menu-button">Prime</div>
             </a>
-            <a href="/formCheckOut" class="button">
+            <a href="/formCheckOut?eventName=<%= menu.eventName %>" class="button">
                 <div class="menu-button">Checkout</div>
             </a>
-            <a href="/formApp" class="button">
+            <a href="/formApp?eventName=<%= menu.eventName %>" class="button">
                 <div class="menu-button">App</div>
             </a>
         </div>
-        <div style="display: none;">
-            <input type="text" id="eventName" name="eventName" value=<%= menu.eventName %>>
-        <div>
     </body>
 </html>
