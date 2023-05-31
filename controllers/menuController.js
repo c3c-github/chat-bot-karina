@@ -5,19 +5,24 @@ const menu = (req, res) => {
     res.render("menu", {menu : {'eventName': eventName}} );
 }
 const formPay = (req, res) => {
-    res.render("form", {form : {'name': 'PAYMENTS'}} );
+    const eventName = req.query.eventname;
+    res.render("form", {form : {'name': 'PAYMENTS', 'eventName': eventName}} );
 }
 const formVentures = (req, res) => {
-    res.render("form", {form : {'name': 'VENTURES'}} );
+    const eventName = req.query.eventname;
+    res.render("form", {form : {'name': 'VENTURES', 'eventName': eventName}} );
 }
 const formPrime = (req, res) => {
-    res.render("form", {form : {'name': 'PRIME'}} );
+    const eventName = req.query.eventname;
+    res.render("form", {form : {'name': 'PRIME', 'eventName': eventName}} );
 }
 const formCheckOut = (req, res) => {
-    res.render("form", {form : {'name': 'CHECKOUT'}} );
+    const eventName = req.query.eventname;
+    res.render("form", {form : {'name': 'CHECKOUT', 'eventName': eventName}} );
 }
 const formApp = (req, res) => {
-    res.render("form", {form : {'name': 'APP'}} );
+    const eventName = req.query.eventname;
+    res.render("form", {form : {'name': 'APP', 'eventName': eventName}} );
 }
 
 const thanks = (req, res) => {
