@@ -1,11 +1,11 @@
 const jsforce = require('jsforce');
 
 const menu = (req, res) => {
-    res.render("menu", {} );
+    const eventName = req.query.eventname;
+    res.render("menu", {'eventName': eventName} );
 }
 const formPay = (req, res) => {
-    const eventName = req.query.eventname;
-    res.render("form", {form : {'name': 'PAYMENTS', 'eventName': eventName}} );
+    res.render("form", {form : {'name': 'PAYMENTS'}} );
 }
 const formVentures = (req, res) => {
     res.render("form", {form : {'name': 'VENTURES'}} );
